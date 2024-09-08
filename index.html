@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Complaint Management System</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: lightsteelblue;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #35307bb8;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            color: whitesmoke !important;
+            font-size: 1.8rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link {
+            color:white !important;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ff9800 !important;
+            transform: scale(1.1);
+        }
+
+        /* Carousel Styles */
+        .carousel-item {
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .carousel-caption {
+            bottom: 20%;
+            color: #fdfd00fe;
+            text-shadow: 2px 2px 4px rgb(255, 0, 0);
+        }
+
+        .carousel-caption h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .carousel-caption p {
+            font-size: 1.5rem;
+        }
+
+        /* Page Content Styles */
+        .container {
+            background-color:lightskyblue;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 6px 10px rgb(247, 4, 4);
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .com h1 {
+            font-size: 2.5rem;
+            color: #ff0000;
+        }
+
+        .com h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .com p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #2196f3;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Hover Effects */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animated Navbar */
+        .navbar {
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .nav-link {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                color: #ddd;
+            }
+            50% {
+                color: #ff9800;
+            }
+            100% {
+                color: #ddd;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .carousel-caption h1 {
+                font-size: 2rem;
+            }
+
+            .carousel-caption p {
+                font-size: 1rem;
+            }
+
+            .com h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><b>COMPLAINT MANAGEMENT</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost/Complaint Management System/users/"><b>User Login</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost/Complaint Management System/users/registration.php"><b>User Registration</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost/Complaint Management System/admin/"><b>Admin</b></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Half Page Image Background Carousel Header -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="
+    background-image: url('http://localhost/Complaint%20Management%20System/img/img13.jpg');
+    background-size: 1400px; /* Resize to fit the container while maintaining aspect ratio */
+    background-position: center; /* Center the image within the container */
+    background-repeat: no-repeat;
+    margin: 10px; /* Prevent the image from repeating */
+    height: 600px; /* Set a specific height for the carousel item */
+">
+
+                <div class="carousel-caption">
+                    <h1>Welcome to Complaint Management System</h1>
+                    <p>The Easiest Way To Complain Online</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image:url('http://localhost/Complaint%20Management%20System/img/img9.jpg'); 
+            background-size: 500px; /* Resize to fit the container while maintaining aspect ratio */
+    background-position: center; /* Center the image within the container */
+    background-repeat: no-repeat;
+    margin: 10px; /* Prevent the image from repeating */
+    height: 600px; /* Set a specific height for the carousel item */
+    ">
+                <div class="carousel-caption">
+                    <h1>Fight Back!</h1>
+                    <p>File your complaints and get satisfied.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image:url('http://localhost/Complaint%20Management%20System/img/c10.jpg');">
+                <div class="carousel-caption">
+                    <h1>Join Us Today</h1>
+                    <p>Sign up and start filing complaints easily.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="com text-center">
+                    <h1 id="welcome-text">Complaint Management System</h1>
+                    <h2 id="easiest-way-text">If you don't appreciate your customers, someone else will.</h2>
+                    <p><b><i>Tired of getting ripped off? Fight back and file a customer complaint now. Sign up today and you can leave complaints on various topics/companies.</i></b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Complaint Management System</p>
+    </footer>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+
+    <!-- Script to Activate Carousel and GSAP Animations -->
+    <script>
+        // Initialize Bootstrap carousel
+        $('.carousel').carousel({
+            interval: 5000
+        });
+
+        // GSAP Animations for Carousel Captions
+        gsap.from(".carousel-caption h1", {
+            duration: 1.5,
+            y: -50,
+            opacity: 0,
+            ease: "bounce.out",
+            delay: 0.5
+        });
+
+        gsap.from(".carousel-caption p", {
+            duration: 1.5,
+            y: 50,
+            opacity: 0,
+            ease: "bounce.out",
+            delay: 1
+        });
+
+        // GSAP Animations for Page Content
+        gsap.from("#welcome-text", {
+            duration: 1.5,
+            y: -100,
+            opacity: 0,
+            ease: "bounce.out",
+            delay: 1.5
+        });
+
+        gsap.from("#easiest-way-text", {
+            duration: 1.5,
+            y: 100,
+            opacity: 0,
+            ease: "bounce.out",
+            delay: 2
+        });
+
+        gsap.from("footer", {
+            duration: 1.5,
+            y: 100,
+            opacity: 0,
+            ease: "bounce.out",
+            delay: 2.5
+        });
+    </script>
+</body>
+
+</html>
